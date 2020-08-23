@@ -9,6 +9,7 @@
 import UIKit
 import Flurry_iOS_SDK
 import Firebase
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         .withLogLevel(FlurryLogLevelAll))
         FirebaseApp.configure()
         
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
         setCustomer()
         return true
     }
@@ -42,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Flurry.logEvent("APP_Launch", withParameters: ["Session_ID": "\(sessionID)"])
         Analytics.logEvent("APP_Launch", parameters: [
         "Session_ID": "\(sessionID)"])
-        Flurry.logEvent("APP_Launch_WITH_SESSION_ID")
+        Flurry.logEvent("APP_Launch_WITH_SESSION_ID")        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

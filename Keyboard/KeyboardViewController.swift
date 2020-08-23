@@ -8,7 +8,8 @@
 
 import UIKit
 import AudioToolbox
-
+import Flurry_iOS_SDK
+import Firebase
 
 let metrics: [String:Double] = [
     "topBanner": 40
@@ -20,8 +21,6 @@ let kAutoCapitalization = "kAutoCapitalization"
 let kPeriodShortcut = "kPeriodShortcut"
 let kKeyboardClicks = "kKeyboardClicks"
 let kSmallLowercase = "kSmallLowercase"
-
-
 
 
 class KeyboardViewController: UIInputViewController {
@@ -126,6 +125,38 @@ class KeyboardViewController: UIInputViewController {
         self.view.addSubview(self.forwardingView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(KeyboardViewController.defaultsChanged(_:)), name: UserDefaults.didChangeNotification, object: nil)
+        
+        
+        DispatchQueue.once(token: "com.anispy211.brocodekeyboardApp") {
+            // Analytics
+            Flurry.startSession("VYCQMY3H673NH5NRCVNY", with: FlurrySessionBuilder
+                .init()
+                .withCrashReporting(true)
+                .withLogLevel(FlurryLogLevelAll))
+            FirebaseApp.configure()
+            print("dispatch once")
+        }
+        
+   
+        setCustomer()
+    }
+    
+    let sessionID = UUID().uuidString
+
+    
+    func setCustomer() {
+        if let userUniqueID = UIDevice.current.identifierForVendor {
+            let vendorID = "\(userUniqueID)"
+            Flurry.setUserID(vendorID)
+            Analytics.logEvent("KEY_APP_CUSTOMER_ID", parameters: [
+            "KEY_APP_VENDOR_ID": "\(vendorID)"])
+            Flurry.logEvent("KEY_APP_Launch_WITH_CUSTOMER_ID")
+        }
+        
+        Flurry.logEvent("KEY_APP_Launch", withParameters: ["Session_ID": "\(sessionID)"])
+        Analytics.logEvent("KEY_APP_Launch", parameters: [
+        "KEY_APP_Session_ID": "\(sessionID)"])
+        Flurry.logEvent("KEY_APP_Launch_WITH_SESSION_ID")
     }
     
     required init?(coder: NSCoder) {
@@ -955,4 +986,34 @@ class HeadeView:ExtraView {
         super.setNeedsLayout()
     }
 
+}
+
+public extension DispatchQueue {
+    private static var _onceTracker = [String]()
+
+    class func once(file: String = #file,
+                           function: String = #function,
+                           line: Int = #line,
+                           block: () -> Void) {
+        let token = "\(file):\(function):\(line)"
+        once(token: token, block: block)
+    }
+
+    /**
+     Executes a block of code, associated with a unique token, only once.  The code is thread safe and will
+     only execute the code once even in the presence of multithreaded calls.
+
+     - parameter token: A unique reverse DNS style name such as com.vectorform.<name> or a GUID
+     - parameter block: Block to execute once
+     */
+    class func once(token: String,
+                           block: () -> Void) {
+        objc_sync_enter(self)
+        defer { objc_sync_exit(self) }
+
+        guard !_onceTracker.contains(token) else { return }
+
+        _onceTracker.append(token)
+        block()
+    }
 }

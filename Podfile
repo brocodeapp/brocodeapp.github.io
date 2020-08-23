@@ -4,6 +4,7 @@
 target 'HostingApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  pod 'Google-Mobile-Ads-SDK'
   pod 'Flurry-iOS-SDK/FlurrySDK' #Analytics Pod
 # add the Firebase pod for Google Analytics
 pod 'Firebase/Analytics'
@@ -16,7 +17,8 @@ target 'Keyboard' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   # Pods for Keyboard
-
+  pod 'Flurry-iOS-SDK/FlurrySDK' #Analytics Pod
+  pod 'Firebase/Analytics'
 end
 
 target 'KeyboardFramework' do

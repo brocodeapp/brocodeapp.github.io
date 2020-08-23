@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>680973170814-ng22np81pop6ri32bu0viduhv2v9vm1f.apps.googleusercontent.com</string>
+	<string>680973170814-v1kn6d4280grvgbs56i2vek9l4l1rv3u.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.680973170814-ng22np81pop6ri32bu0viduhv2v9vm1f</string>
+	<string>com.googleusercontent.apps.680973170814-v1kn6d4280grvgbs56i2vek9l4l1rv3u</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAB2p6_hMS6oTOL8NHrOv2rtl5Uo4ybISY</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.anispy211.brocodeboardapp</string>
+	<string>com.anispy211.brocodeboardapp.keyboardapp</string>
 	<key>PROJECT_ID</key>
 	<string>brocode-board</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:680973170814:ios:14cd0dc064fcd3cf72c02f</string>
+	<string>1:680973170814:ios:97deabcd727b2af372c02f</string>
 	<key>DATABASE_URL</key>
 	<string>https://brocode-board.firebaseio.com</string>
 </dict>

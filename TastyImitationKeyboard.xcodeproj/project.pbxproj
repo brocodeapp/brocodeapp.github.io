@@ -39,6 +39,9 @@
 		ADEEFEB9E626499FD5260ADB /* Pods_Keyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9D0060E1F0F71B1D851F48 /* Pods_Keyboard.framework */; };
 		B6B5764124BB95BD00F92876 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B5764024BB95BD00F92876 /* Launch.storyboard */; };
 		B6B5764924BBAD9D00F92876 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B6B5764824BBAD9D00F92876 /* Settings.bundle */; };
+		B6B795C524ED33EF001D2F16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6B795C424ED33EF001D2F16 /* GoogleService-Info.plist */; };
+		B6B795D524ED5B1F001D2F16 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B795D424ED5B1F001D2F16 /* ContainerVC.swift */; };
+		B6B795D724ED5C0C001D2F16 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B795D624ED5C0C001D2F16 /* SideMenuVC.swift */; };
 		B6C7ACA124C328C6000AC4B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6C7ACA024C328C6000AC4B4 /* GoogleService-Info.plist */; };
 		B6C7ACA524C39383000AC4B4 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7ACA424C39383000AC4B4 /* Crypto.swift */; };
 		BA2CC22E2104971500D3B08D /* Keyboard-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = D8512B90205989050003CF2F /* Keyboard-Bridging-Header.h */; };
@@ -165,6 +168,9 @@
 		B6B5764024BB95BD00F92876 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		B6B5764324BBAA6500F92876 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		B6B5764824BBAD9D00F92876 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		B6B795C424ED33EF001D2F16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B6B795D424ED5B1F001D2F16 /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		B6B795D624ED5C0C001D2F16 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		B6C7ACA024C328C6000AC4B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6C7ACA424C39383000AC4B4 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		CA9D0060E1F0F71B1D851F48 /* Pods_Keyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,6 +321,8 @@
 		4E807D9519461D9000D875D1 /* HostingApp */ = {
 			isa = PBXGroup;
 			children = (
+				B6B795D424ED5B1F001D2F16 /* ContainerVC.swift */,
+				B6B795D624ED5C0C001D2F16 /* SideMenuVC.swift */,
 				D859621820D2FE32002A4192 /* HostingApp.entitlements */,
 				B6B5764024BB95BD00F92876 /* Launch.storyboard */,
 				4EF16F9A19D2550D0076AFCB /* AppDelegate.swift */,
@@ -339,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				D859621720D2FE29002A4192 /* Keyboard.entitlements */,
+				B6B795C424ED33EF001D2F16 /* GoogleService-Info.plist */,
 				4E6AEE5219D2488B00931E8F /* Controller */,
 				4E6AEE5019D2486900931E8F /* Model */,
 				4E6AEE4F19D2484B00931E8F /* Views */,
@@ -582,6 +591,7 @@
 			files = (
 				D8965A5B205836E900AD72E1 /* HeaderView.xib in Resources */,
 				D8965A5D205842C400AD72E1 /* Images.xcassets in Resources */,
+				B6B795C524ED33EF001D2F16 /* GoogleService-Info.plist in Resources */,
 				4E52A6DA1A06C198006A08CE /* DefaultSettings.xib in Resources */,
 				4E52A6D61A06BADA006A08CE /* Media.xcassets in Resources */,
 			);
@@ -694,7 +704,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6B795D524ED5B1F001D2F16 /* ContainerVC.swift in Sources */,
 				4EF16F9B19D2550D0076AFCB /* AppDelegate.swift in Sources */,
+				B6B795D724ED5C0C001D2F16 /* SideMenuVC.swift in Sources */,
 				4EF16F9819D255030076AFCB /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -898,11 +910,12 @@
 				CODE_SIGN_ENTITLEMENTS = HostingApp/HostingApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 65FHVP93SG;
 				INFOPLIST_FILE = HostingApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anispy211.brocodeboardapp;
 				PRODUCT_NAME = "Bro Code";
 				PROVISIONING_PROFILE = "";
@@ -923,11 +936,12 @@
 				CODE_SIGN_ENTITLEMENTS = HostingApp/HostingApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 65FHVP93SG;
 				INFOPLIST_FILE = HostingApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anispy211.brocodeboardapp;
 				PRODUCT_NAME = "Bro Code";
 				PROVISIONING_PROFILE = "";
@@ -948,12 +962,13 @@
 				CODE_SIGN_ENTITLEMENTS = Keyboard/Keyboard.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 65FHVP93SG;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = Keyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anispy211.brocodeboardapp.keyboardapp;
 				PRODUCT_NAME = "Bro Code Board";
@@ -976,12 +991,13 @@
 				CODE_SIGN_ENTITLEMENTS = Keyboard/Keyboard.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 65FHVP93SG;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = Keyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anispy211.brocodeboardapp.keyboardapp;
 				PRODUCT_NAME = "Bro Code Board";
