@@ -29,3 +29,5 @@ rhythmone.com, 4201299756, RESELLER, a670c89d4a324e47
 smartadserver.com, 3117, RESELLER
 startapp.com, smt, RESELLER
 xad.com, 241, RESELLER, 81cbf0a75a5e0e9a
+
+google.com, pub-4669862103908847, DIRECT, f08c47fec0942fa0
